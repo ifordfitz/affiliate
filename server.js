@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Brand = require('./models/brands.js');
 //___________________
 //Port
 //___________________
@@ -48,10 +49,47 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello all the Worlds!');
+
+
+app.get('/brands/new' , (req, res) => {
+  res.render('new.ejs');
 });
 
+app.get('/brands/:id', (req, res)=>{
+    Brand.findById(req.params.id, (err, foundBrand)=>{
+      res.render('show.ejs', { brands: foundBrand })    });
+});
+
+app.post('/brands/', (req, res) => {
+  if(req.body.ownItem === 'on') {
+    req.body.ownItem = true;
+  } else {
+    req.body.ownItem = false;
+  }
+  if(req.body.socialMedia === 'on') {
+    req.body.socialMedia = true;
+  } else {
+    req.body.socialMedia = false;
+  }
+  Brand.create(req.body, (error, createBrand) => {
+    res.redirect('/brands/')
+  });
+});
+
+app.get('/brands/', (req, res) => {
+  Brand.find({}, (error, allBrands) => {
+    res.render('index.ejs', {
+      brands: allBrands
+    });
+  });
+});
+
+
+app.delete('/brands/:id', (req, res) => {
+  Brand.findByIdAndRemove(req.params.id, (err, data) => {
+    res.redirect('/brands')
+  })
+})
 //___________________
 //Listener
 //___________________
