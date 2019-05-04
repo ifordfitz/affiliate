@@ -10,7 +10,8 @@
     <% for (let i = 0; i < brands.length; i ++) { %>
       <h3><%=brands[i].name%></h3>
       <a href="/brands/<%=brands[i].id%>"><img src="<%=brands[i].image%>"></a>
-      <h5><%=brands[i].referral%></h5>
+      <h5><%=brands[i].description%></h5>
+      <a href="/brands/<%=brands[i].id; %>/edit">Edit</a>
     <% } %>
 
 

@@ -5,7 +5,7 @@ const brandSchema = new mongoose.Schema({
   image: {type: String, required: true},
   ownItem: Boolean,
   socialMedia: Boolean,
-  referral: String
+  description: String
 });
 
 const Brand = mongoose.model('Brand', brandSchema);

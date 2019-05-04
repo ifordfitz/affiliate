@@ -5,11 +5,10 @@
     <title></title>
   </head>
   <body>
+    <h1>Affiliate</h1>
     <h1> <%=brands.name%> </h1>
     <img src="<%=brands.image%>" alt="">
-    <h5><%=brands.referral%></h5>
-    <form action="/brands/<%=brands.id; %>?_method=DELETE" method="POST"><input type="submit" value="DELETE"/>
-      <h4><a href="/brands">Back to Brands</a></h4>
-    </form>
+    <h5><%=brands.description%></h5>
+    <h4><a href="/brands">Back to Brands</a></h4>
   </body>
 </html>

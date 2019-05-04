@@ -90,6 +90,26 @@ app.delete('/brands/:id', (req, res) => {
     res.redirect('/brands')
   })
 })
+
+app.get('/brands/:id/edit', (req, res)=>{
+    Brand.findById(req.params.id, (err, foundBrand)=>{ //find the fruit
+        res.render(
+    		'edit.ejs',
+    		{
+    			brands: foundBrand
+    		}
+    	);
+    });
+});
+
+app.put('/brands/:id', (req, res)=>{
+  console.log(req.body);
+  Brand.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+      res.redirect('/brands');
+  });
+});
+
+
 //___________________
 //Listener
 //___________________
