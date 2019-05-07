@@ -51,7 +51,9 @@ app.use(brandsController);
 // Routes
 //___________________
 //localhost:3000
-
+app.get('/', (req, res) => {
+  res.redirect('/brands')
+})
 
 //___________________
 //Listener
