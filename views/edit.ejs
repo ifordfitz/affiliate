@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
     <h1>Affiliate</h1>
@@ -11,7 +13,7 @@
     <h5><%=brands.description%></h5>
 
     <form action="/brands/<%=brands.id%>?_method=PUT" method="POST">
-      Brand Name: <input type="text" name="name" value="<%=brands.name%>"/><br/>
+      Product Name: <input type="text" name="name" value="<%=brands.name%>"/><br/>
       Image: <input type="text" name="image" value="<%=brands.image%>"/><br/>
       Own Item: <input type="checkbox" name="ownItem"/><br/>
       Follow on Social Media: <input type="checkbox" name="socialMedia"/><br/>
