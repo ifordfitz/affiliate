@@ -6,8 +6,8 @@
 }
 
 .prodImg {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
 }
 
@@ -15,6 +15,10 @@
   text-align: center;
   margin-left: 150px;
   margin-right: 150px;
+}
+
+.brandIndexName {
+  margin-top: 40px;
 }
 
 .newItems {
