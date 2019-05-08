@@ -24,12 +24,14 @@ router.post('/', (req, res) => {
   }
   console.log(req.body);
   Brand.create(req.body, (error, createBrand) => {
+    console.log(error);
     res.redirect('/brands/')
   });
 });
 
 router.get('/', (req, res) => {
   Brand.find({}, (error, allBrands) => {
+    console.log(allBrands);
     res.render('index.ejs', {
       brands: allBrands
     });

@@ -1,3 +1,40 @@
 .brandName {
-  color: red;
+  color: #FF7B7A;
+  text-align: center;
+  padding: 10px;
+  background-color: #33E4FF;
+}
+
+.prodImg {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.showcase {
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.newItems {
+  padding: 5px;
+  margin: 10px;
+}
+
+.addNew {
+  text-align: center;
+}
+
+.newBrandBtn {
+  color: #33E4FF;
+}
+
+.editBtn {
+  color: #FF7B7A;
+}
+
+.addFavBrand {
+  color: #33E4FF;
+  padding: 20px;
 }
