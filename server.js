@@ -6,6 +6,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const morgan = require('morgan');
 //___________________
 //Port
 //___________________
@@ -42,9 +43,11 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+// enables morgan
+app.use(morgan('tiny'));
 
 const brandsController = require('./controllers/brandsController.js');
-app.use(brandsController);
+app.use('/brands', brandsController);
 
 
 //___________________

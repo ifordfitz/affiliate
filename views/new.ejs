@@ -10,10 +10,29 @@
     <h1>Add a Favorite Brand!</h1>
     <form action="/brands" method="POST">
       Product Name: <input type="text" name="name"/><br/>
-      Image: <input type="text" name="image" placeholder="URL of Image"/><br/>
+      URL of Brand: <input type="text" name="url"/><br/>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Select Category</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option class="apparel">Apparel</option>
+          <option class="shoes">Shoes</option>
+          <option class="home">Home</option>
+          <option class="tech">Tech</option>
+          <option class="peronalCare">Personal Care</option>
+        </select>
+      </div>
+
+      <!-- Image: <input type="text" name="image" placeholder="URL of Image"/><br/> -->
+
+        <div class="form-group">
+          <label for="exampleFormControlFile1">Add Image File</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+
       Own Item: <input type="checkbox" name="ownItem"/><br/>
       Follow on Social Media: <input type="checkbox" name="socialMedia"/><br/>
       Description: <textarea name="description"></textarea><br/>
+      Referral: <textarea name="referral"></textarea><br/>
       <input type="submit" name="" value="Create Brand"/>
     </form>
   </body>
